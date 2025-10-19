@@ -7,10 +7,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <link rel="icon" href="img/flowers.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@700&display=swap"
+    rel="stylesheet">
   <title>FLORES</title>
+  <style>
+    .love-text {
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Great Vibes', cursive;
+      font-size: 48px;
+      color: #ff69b4;
+      text-shadow:
+        0 0 10px rgba(255, 105, 180, 0.8),
+        0 0 20px rgba(255, 105, 180, 0.6),
+        2px 2px 4px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      animation: glow 2s ease-in-out infinite alternate;
+      white-space: nowrap;
+      text-align: center;
+      margin-top: 70px;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow:
+          0 0 10px rgba(255, 105, 180, 0.8),
+          0 0 20px rgba(255, 105, 180, 0.6),
+          2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+
+      to {
+        text-shadow:
+          0 0 20px rgba(255, 105, 180, 1),
+          0 0 30px rgba(255, 105, 180, 0.8),
+          0 0 40px rgba(255, 182, 193, 0.6),
+          2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .love-text {
+        font-size: 32px;
+        top: 40px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .love-text {
+        font-size: 24px;
+        top: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body class="container">
+  <div class="love-text">Khánh yêu Nhi nhiều lắm !!</div>
   <div class="night"></div>
   <div class="flowers">
     <div class="flower flower--1">
