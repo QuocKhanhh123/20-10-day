@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Day</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap-grid.min.css"
+        integrity="sha512-JQksK36WdRekVrvdxNyV3B0Q1huqbTkIQNbz1dlcFVgNynEMRl0F8OSqOGdVppLUDIvsOejhr/W5L3G/b3J+8w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 97vh;
+        }
+
+        .container svg {
+            width: 50%;
+            height: 50%;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .body-letter {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fae1dd;
+        }
+
+        .letter {
+            position: relative;
+            z-index: 1;
+        }
+
+        .valentines {
+            position: relative;
+            top: 50px;
+            cursor: pointer;
+            animation: up 3s linear infinite;
+        }
+
+        @keyframes up {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-30px);
+            }
+        }
+
+        .envelope {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            background-color: #f08080;
+        }
+
+        .envelope:before {
+            background-color: #f08080;
+            content: "";
+            position: absolute;
+            width: 212px;
+            height: 212px;
+            transform: rotate(45deg);
+            top: -105px;
+            left: 44px;
+            border-radius: 30px 0 0 0;
+        }
+
+        .card {
+            position: absolute;
+            background-color: #eae2b7;
+            width: 270px;
+            height: 170px;
+            top: 5px;
+            left: 15px;
+            box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+        }
+
+        .card:before {
+            content: "";
+            position: absolute;
+            border: 3px solid #003049;
+            border-style: dotted;
+            width: 240px;
+            height: 140px;
+            left: 12px;
+            top: 12px;
+        }
+
+        .text {
+            position: absolute;
+            font-family: 'Brush Script MT', cursive;
+            font-size: 30px;
+            text-align: center;
+            line-height: 25px;
+            top: 19px;
+            left: 85px;
+            color: #003049;
+        }
+
+        .heart {
+            background-color: #d62828;
+            display: inline-block;
+            height: 30px;
+            margin: 0 10px;
+            position: relative;
+            top: 110px;
+            left: 105px;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: "";
+            background-color: #d62828;
+            border-radius: 50%;
+            height: 30px;
+            position: absolute;
+            width: 30px;
+        }
+
+        .heart:before {
+            top: -15px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 15px;
+            top: 0;
+        }
+
+        .hearts {
+            position: absolute;
+            top: 0;
+        }
+
+        .one,
+        .two,
+        .three,
+        .four,
+        .five {
+            background-color: red;
+            display: inline-block;
+            height: 10px;
+            margin: 0 10px;
+            position: relative;
+            transform: rotate(-45deg);
+            width: 10px;
+            top: 50px;
+        }
+
+        .one:before,
+        .one:after,
+        .two:before,
+        .two:after,
+        .three:before,
+        .three:after,
+        .four:before,
+        .four:after,
+        .five:before,
+        .five:after {
+            content: "";
+            background-color: red;
+            border-radius: 50%;
+            height: 10px;
+            position: absolute;
+            width: 10px;
+        }
+
+        .one:before,
+        .two:before,
+        .three:before,
+        .four:before,
+        .five:before {
+            top: -5px;
+            left: 0;
+        }
+
+        .one:after,
+        .two:after,
+        .three:after,
+        .four:after,
+        .five:after {
+            left: 5px;
+            top: 0;
+        }
+
+        .one {
+            left: 10px;
+            animation: heart 1s ease-out infinite;
+        }
+
+        .two {
+            left: 30px;
+            animation: heart 2s ease-out infinite;
+        }
+
+        .three {
+            left: 50px;
+            animation: heart 1.5s ease-out infinite;
+        }
+
+        .four {
+            left: 70px;
+            animation: heart 2.3s ease-out infinite;
+        }
+
+        .five {
+            left: 90px;
+            animation: heart 1.7s ease-out infinite;
+        }
+
+        @keyframes heart {
+            0% {
+                transform: translateY(0) rotate(-45deg) scale(0.3);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-150px) rotate(-45deg) scale(1.3);
+                opacity: 0.5;
+            }
+        }
+
+        .front {
+            position: absolute;
+            border-right: 180px solid #f4978e;
+            border-top: 95px solid transparent;
+            border-bottom: 100px solid transparent;
+            left: 120px;
+            top: 5px;
+            width: 0;
+            height: 0;
+            z-index: 10;
+        }
+
+        .front:before {
+            position: absolute;
+            content: "";
+            border-left: 300px solid #f8ad9d;
+            border-top: 195px solid transparent;
+            left: -120px;
+            top: -95px;
+            width: 0;
+            height: 0;
+        }
+
+        .shadow {
+            position: absolute;
+            width: 330px;
+            height: 25px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+            top: 265px;
+            left: -15px;
+            animation: scale 3s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes scale {
+
+            0%,
+            100% {
+                transform: scaleX(1);
+            }
+
+            50% {
+                transform: scaleX(0.85);
+            }
+        }
+
+        .hover-animation {
+            animation: hover 1.75s ease-in-out infinite;
+        }
+
+        #castle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #fae1dd;
+        }
+
+        .dustDef {
+            position: absolute;
+            background-color: white;
+            border-radius: 100%;
+            box-shadow: 0 0 3px 1px white;
+            opacity: 0;
+        }
+
+        @keyframes hover {
+            0% {
+                margin-top: 60px;
+            }
+
+            50% {
+                margin-top: 50px;
+            }
+
+            100% {
+                margin-top: 60px;
+            }
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 25px 0 #e8b2ca;
+            }
+
+            50% {
+                box-shadow: 0 0 45px 0 #e8b2ca;
+            }
+
+            100% {
+                box-shadow: 0 0 25px 0 #e8b2ca;
+            }
+        }
+
+        @keyframes fall {
+            5% {
+                top: 209px;
+                left: 105px;
+                transform: rotate(55deg) scale(0.9, 0.95) skew(-18deg);
+                opacity: 0.9;
+            }
+
+            30% {
+                left: 90px;
+            }
+
+            55% {
+                left: 130px;
+            }
+
+            60%,
+            100% {
+                top: 380px;
+                transform: rotate(30deg) scale(0.9, 0.95) skew(-32deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes floatAnimate {
+            0% {
+                background-size: 105% 120%;
+                background-position: 0 0;
+                opacity: 0.7;
+            }
+
+            50% {
+                background-size: 100% 100%;
+                background-position: 0 0;
+                opacity: 0.5;
+            }
+
+            100% {
+                background-size: 105% 120%;
+                background-position: 0 0;
+                opacity: 0.7;
+            }
+        }
+
+        p {
+            position: absolute;
+            z-index: 2;
+        }
+
+        label {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            opacity: .8;
+        }
+
+        .letters {
+            position: absolute;
+            width: 65px;
+            transition: 10s ease-in-out;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .letters img {
+            width: 100%;
+        }
+
+        .wrapperLetterForm {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+        }
+
+        .boxLetter {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boxLetter .formLetter {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            background-color: #FFEBEB;
+            border-radius: 20px;
+            z-index: 100;
+            padding: 20px 15px;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        .formLetter .wrapperLetter {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border: 2px dashed #FF6666;
+            border-radius: inherit;
+            display: flex;
+        }
+
+        .formLetter .heartLetter {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #FFEBEB;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .heartLetter .heartLetterItem {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            transform: rotate(45deg);
+            background: #FF6666;
+        }
+
+        .heartLetter:first-child {
+            right: 5px;
+            top: 10px;
+        }
+
+        .heartLetter:nth-child(2) {
+            left: 5px;
+            bottom: 10px;
+        }
+
+        .heartLetterItem::before,
+        .heartLetterItem::after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: inherit;
+        }
+
+        .heartLetterItem::before {
+            top: -50%;
+        }
+
+        .heartLetterItem::after {
+            left: -50%;
+        }
+
+        .giftbox {
+            position: relative;
+            width: 40%;
+            height: 100%;
+        }
+
+        .giftbox .img {
+            position: absolute;
+            width: 160px;
+            bottom: -10px;
+            left: 0px;
+            z-index: 100;
+        }
+
+        .giftbox img {
+            width: 100%;
+        }
+
+        .textLetter {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            user-select: none;
+        }
+
+        .textLetter h2 {
+            font-size: 30px;
+            font-weight: 700px;
+            font-family: 'Dancing Script', cursive;
+            /* Giữ nguyên như ban đầu */
+        }
+
+        .textLetter .contentLetter {
+            font-size: 19px;
+            text-align: center;
+            padding: 0px 30px;
+            margin-top: 10px;
+            font-family: 'Dancing Script', cursive;
+            /* Giữ nguyên như ban đầu */
+            position: initial;
+            /* Ngắt dòng an toàn khi văn bản dài và cho phép cuộn nội dung */
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            white-space: pre-wrap;
+            max-height: 65vh;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .fa-xmark {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        .show {
+            display: block;
+        }
+
+        .heartAnimation {
+            position: absolute;
+            width: 150px;
+            bottom: 0;
+        }
+
+        .heartAnimation img {
+            width: 100%;
+        }
+
+        .mewmew1,
+        .mewmew2 {
+            position: absolute;
+            width: 90px;
+        }
+
+        .mewmew1 {
+            bottom: 0;
+            left: 0;
+        }
+
+        .mewmew2 {
+            bottom: 0;
+            right: 0;
+        }
+
+        .mewmew1 img,
+        .mewmew2 img {
+            width: 100%;
+        }
+
+        .nextPageBtn {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #FF6B9D 0%, #FFA07A 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 15;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .nextPageBtn:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+        }
+
+        .nextPageBtn i {
+            color: white;
+            font-size: 20px;
+        }
+
+        @media (max-width: 480px) {
+            .boxLetter .formLetter {
+                width: 92vw;
+                height: auto;
+                max-height: 85vh;
+            }
+
+            .formLetter .wrapperLetter {
+                overflow: hidden;
+            }
+
+            .giftbox {
+                display: none;
+            }
+
+            .textLetter {
+                padding: 6px 4px;
+            }
+
+            .textLetter h2 {
+                font-size: 24px;
+            }
+
+            .textLetter .contentLetter {
+                font-size: 16px;
+                max-height: 63vh;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                padding: 0 12px;
+            }
+
+            .heartAnimation {
+                position: static;
+                width: 120px;
+                margin: 8px auto 0;
+            }
+
+            .signature {
+                right: 12px;
+                bottom: 8px;
+                font-size: 16px;
+            }
+
+            .nextPageBtn {
+                width: 45px;
+                height: 45px;
+                bottom: 12px;
+            }
+
+            .nextPageBtn i {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="castle">
+        <div class="letter">
+            <div class="valentines">
+                <div class="envelope"></div>
+                <div class="front"></div>
+                <div class="card">
+                    <div class="text">Happy</br> Women's</br> Day!</div>
+                    <div class="heart"></div>
+                </div>
+                <div class="hearts">
+                    <div class="one"></div>
+                    <div class="two"></div>
+                    <div class="three"></div>
+                    <div class="four"></div>
+                    <div class="five"></div>
+                </div>
+            </div>
+            <div class="shadow"></div>
+        </div>
+    </div>
+
+    <div class="wrapperLetterForm" style="display: none;">
+        <div class="boxLetter">
+            <i class="fa-solid fa-xmark"></i>
+            <div class="formLetter">
+                <div class="heartLetter">
+                    <div class="heartLetterItem"></div>
+                </div>
+                <div class="heartLetter">
+                    <div class="heartLetterItem"></div>
+                </div>
+                <div class="wrapperLetter">
+                    <div class="giftbox">
+                        <div class="img">
+                            <img src="./image/giftbox.png" alt="">
+                        </div>
+                    </div>
+                    <div class="textLetter">
+                        <h2></h2>
+                        <p class="contentLetter"></p>
+                        <div class="heartAnimation">
+                            <img src="./image/heartAnimation.gif" alt="">
+                        </div>
+                    </div>
+                    <div class="mewmew1">
+                        <img src="./image/mewmew.gif" alt="">
+                    </div>
+                    <div class="mewmew2">
+                        <img src="./image/mewmew.gif" alt="">
+                    </div>
+                </div>
+                <div class="nextPageBtn" title="Xem thêm">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+    <script>
+        let indexText = 0;
+        let textLetter = document.querySelector('.textLetter h2');
+        const textLetterH2 = "Gửi Lan Nhi yêu dấu !!";
+        let timoutTextLetter;
+
+        function textCharLetter() {
+            if (indexText < textLetterH2.length) {
+                textLetter.textContent += textLetterH2[indexText];
+                indexText++;
+                setTimeout(textCharLetter, 500);
+            } else {
+                clearInterval(timoutTextLetter);
+                setTimeout(() => {
+                    funcTimeoutLetterContent();
+                }, 500);
+            }
+        }
+
+        function funcTimeoutLetter() {
+            indexText = 0;
+            textLetter.textContent = '';
+            clearInterval(timoutTextLetter);
+            timoutTextLetter = setInterval(() => {
+                textCharLetter();
+            }, 100);
+        }
+
+        let indexTextContent = 0;
+        let textLetterContent = document.querySelector('.contentLetter');
+        const textLetterP = `Hôm nay là một ngày đặc biêt, không chỉ là ngày 20/10 - ngày tôn vinh những người phụ nữ Việt Nam, mà với anh, đây còn là ngày đánh dấu cột mốc 3 tháng chúng mình bên nhau. Thời gian vừa qua, được ở bên cạnh, quan tâm và yêu thương em là điều hạnh phúc lớn nhất của anh. Cảm ơn em đã đến, mang theo tất cả sự dịu dàng và ngọt ngào, khiến mỗi ngày của anh đều trở nên ý nghĩa hơn.
+        Nhân ngày đặc biệt "gấp đôi" này, anh chúc vợ của anh luôn luôn xinh đẹp, rạng rỡ và ngập tràn hạnh phúc. Chúc mừng 3 tháng yêu nhau của chúng ta! Anh có một món quà nhỏ nhưng anh thấy rất ý nghĩa muốn tặng em, mong rằng chúng mình sẽ luôn nắm tay nhau đi qua những cột mốc 1 năm, 3 năm, 30 năm... nữa. Yêu vợ rất nhiều!`;
+        let timoutTextLetterContent;
+        function textCharLetterContent() {
+            if (indexTextContent < textLetterP.length) {
+                textLetterContent.textContent += textLetterP[indexTextContent];
+                indexTextContent++;
+                setTimeout(textCharLetterContent, 2500);
+            } else {
+                clearInterval(timoutTextLetterContent);
+            }
+        }
+
+        function funcTimeoutLetterContent() {
+            indexTextContent = 0;
+            textLetterContent.textContent = '';
+            clearInterval(timoutTextLetterContent);
+            timoutTextLetterContent = setInterval(() => {
+                textCharLetterContent();
+            }, 100);
+        }
+
+        $(document).ready(function () {
+            const bgm = document.getElementById('bgm');
+            $('.valentines').mouseenter(function () {
+                $('.card').stop().animate({
+                    top: '-90px'
+                }, 'slow');
+            }).mouseleave(function () {
+                $('.card').stop().animate({
+                    top: 0
+                }, 'slow');
+            });
+
+            $('.card').click(function () {
+                $('.wrapperLetterForm').fadeIn();
+                funcTimeoutLetter();
+                if (bgm) {
+                    bgm.volume = 0.6;
+                    bgm.play().catch(() => { });
+                }
+            });
+
+            $('.fa-xmark').click(function () {
+                $('.wrapperLetterForm').css('display', 'none');
+                if (bgm) {
+                    bgm.pause();
+                    bgm.currentTime = 0;
+                }
+            });
+
+            $('.nextPageBtn').click(function () {
+                window.location.href = 'bouquet.html';
+            });
+        });
+
+        const head = document.getElementsByTagName('head')[0];
+        let animationId = 1;
+
+        function CreateMagicDust(x1, x2, y1, y2, sizeRatio, fallingTime, animationDelay, node = 'main') {
+            let dust = document.createElement('span');
+            let animation = document.createElement('style');
+            animation.innerHTML = `\
+      @keyframes blink${animationId}{\
+          0% {\
+              top: ${y1}px;\
+              left: ${x1}px;\
+              width: ${2 * sizeRatio}px;\
+              height: ${2 * sizeRatio}px;\
+              opacity: .4\
+          }\
+          20% {\
+              width: ${4 * sizeRatio}px;\
+              height: ${4 * sizeRatio}px;\
+              opacity: .8\
+          }\
+          35% {\
+              width: ${2 * sizeRatio}px;\
+              height: ${2 * sizeRatio}px;\
+              opacity: .5\
+          }\
+          55% {\
+              width: ${3 * sizeRatio}px;\
+              height: ${3 * sizeRatio}px;\
+              opacity: .7\
+          }\
+          80% {\
+              width: ${sizeRatio}px;\
+              height: ${sizeRatio}px;\
+              opacity: .3\
+          }\
+          100% {\
+              top: ${y2}px;\
+              left: ${x2}px;\
+              width: 0px;\
+              height: 0px;\
+              opacity: .1\
+          }}`;
+            head.appendChild(animation);
+            dust.classList.add('dustDef');
+            dust.setAttribute('style', `animation: blink${animationId++} ${fallingTime}s cubic-bezier(.71, .11, .68, .83) infinite ${animationDelay}s`);
+            document.getElementById(node).appendChild(dust);
+        }
+
+        [[130, 132, 150, 152, .15, 2.5, .1, 'sub'],
+        [65, 63, 300, 299, .5, 2, .2, 'sub'],
+        [70, 70, 150, 150, .45, 2, .5],
+        [75, 78, 160, 170, .6, 2, 1],
+        [80, 82, 160, 180, .6, 1, .4],
+        [85, 100, 160, 170, .5, 2, .5],
+        [125, 110, 170, 180, .25, 3, 1.5],
+        [90, 90, 115, 115, .4, 2, 2],
+        [93, 95, 200, 200, .4, 3, 1.5],
+        [100, 100, 145, 155, .45, 1, .5],
+        [100, 90, 170, 230, .35, 2, .75],
+        [100, 102, 115, 112, .35, 3, .25],
+        [100, 95, 170, 200, .55, 1.5, .75],
+        [100, 97, 150, 190, .7, 2, 1.5],
+        [105, 100, 160, 180, .5, 1.5, .725],
+        [125, 125, 180, 190, .25, 1, .725],
+        [130, 130, 135, 135, .45, 3, 1.5],
+        [135, 132, 170, 190, .25, 2.5, .75],
+        [135, 132, 320, 315, .2, 5, .3, 'sub']
+        ].forEach((o) => CreateMagicDust(...o));
+    </script>
+    <audio id="bgm" src="./mucsic/music.mp3" preload="auto" loop></audio>
+</body>
+
+</html>
