@@ -602,11 +602,13 @@
             z-index: 15;
             box-shadow: 0 4px 15px rgba(255, 107, 157, 0.4);
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .nextPageBtn:hover {
             transform: translateX(-50%) scale(1.1);
             box-shadow: 0 6px 20px rgba(255, 107, 157, 0.6);
+            text-decoration: none;
         }
 
         .nextPageBtn i {
@@ -722,9 +724,9 @@
                         <img src="./image/mewmew.gif" alt="">
                     </div>
                 </div>
-                <div class="nextPageBtn" title="Xem thêm">
+                <a class="nextPageBtn" title="Xem thêm" href="./Flores_NilverTI/FLORES.html">
                     <i class="fa-solid fa-arrow-right"></i>
-                </div>
+                </a>
             </div>
         </div>
     </div>
@@ -813,7 +815,7 @@
             });
 
             $('.nextPageBtn').click(function () {
-                window.location.href = 'bouquet.html';
+                window.location.href = './Flores_NilverTI/FLORES.html';
             });
         });
 
